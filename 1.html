@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateDays(initialVolume) {
+            let days = 0;
+            while (initialVolume >= 10) {
+                initialVolume *= 0.9; 
+                console.log(initialVolume);
+                days++;
+            }
+            return days;
+        }
+
+        const initialVolume = parseFloat(prompt("Введите первоначальный объем воды:"));
+
+        if (isNaN(initialVolume)) {
+            console.log("Ошибка ввода. Пожалуйста, введите число.");
+        } else {
+            const days = calculateDays(initialVolume);
+            console.log(`Воды хватит на ${days} дней.`);
+        }
+    </script>
+</body>
+</html>
